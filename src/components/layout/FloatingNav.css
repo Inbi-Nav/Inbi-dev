@@ -1,0 +1,119 @@
+.nav-wrap {
+  position: fixed;
+  inset-inline: 0;
+  top: 1.5rem;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.6rem;
+  pointer-events: auto;
+  background-color: hsl(var(--petal));
+  border: 2px solid hsl(var(--rose-gold) / 0.5);
+
+  clip-path: polygon(
+    6px 0%, calc(100% - 6px) 0%,
+    100% 6px, 100% calc(100% - 6px),
+    calc(100% - 6px) 100%, 6px 100%,
+    0% calc(100% - 6px), 0% 6px
+  );
+
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 24px hsl(var(--peony) / 0.10),
+    inset 0 1px 0 hsl(var(--champagne) / 0.80);
+}
+
+.nav-btn {
+  position: relative;
+  border: 2px solid transparent;
+  background: transparent;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-pixel, monospace);
+  color: hsl(var(--peony));
+  cursor: none;
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.03em;
+
+  clip-path: polygon(
+    5px 0%, calc(100% - 5px) 0%,
+    100% 5px, 100% calc(100% - 5px),
+    calc(100% - 5px) 100%, 5px 100%,
+    0% calc(100% - 5px), 0% 5px
+  );
+}
+
+.nav-btn:hover {
+  color: hsl(var(--peony));
+  background: hsl(var(--blush) / 0.6);
+}
+
+.nav-btn.is-active {
+  color: hsl(var(--petal));
+  background: hsl(var(--peony));
+  box-shadow: 0 2px 12px hsl(var(--peony) / 0.35);
+}
+
+.nav-pill-bg {
+  display: none;
+}
+
+.nav-label {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .nav-wrap {
+    top: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .nav-pill {
+    width: 100%;
+
+    max-width: 95vw;
+
+    justify-content: space-between;
+
+    gap: 0.15rem;
+
+    padding: 0.35rem;
+  }
+
+  .nav-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 0.35rem 0.2rem;
+
+    font-size: clamp(0.45rem, 2vw, 0.62rem);
+  }
+
+  .nav-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.55rem;
+  }
+
+  .nav-pill {
+    gap: 0.2rem;
+    padding: 0.35rem 0.4rem;
+  }
+}

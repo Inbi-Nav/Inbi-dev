@@ -1,0 +1,205 @@
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  overflow: hidden;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.hero-image img {
+  width: 220px;
+  image-rendering: pixelated;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  /* ↓↓↓ AQUI REDUCES EL ESPACIO ↓↓↓ */
+  padding-top: 1rem;
+}
+
+.hero-name {
+  font-size: 64px;
+  font-weight: 800;
+  font-family: var(--font-pixel);
+  color: hsl(var(--peony));
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+
+  border-right: 2px solid hsl(var(--peony));
+
+  animation:
+    typeName 1.8s steps(14, end) forwards,
+    blinkCursor .7s step-end 3;
+}
+
+.hero-role {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: var(--font-pixel);
+  color: hsl(var(--muted-foreground));
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+  opacity: 0;
+
+  border-right: 2px solid hsl(var(--rose-gold));
+
+  animation:
+    showRole 0s forwards 2s,
+    typeRole 1.8s steps(20, end) forwards 2s,
+    blinkCursor .7s step-end 3 2s;
+}
+
+@keyframes typeName {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 14ch;
+  }
+}
+
+@keyframes typeRole {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes showRole {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-content {
+    gap: 3rem;
+  }
+
+  .hero-image img {
+    width: 180px;
+  }
+
+  .hero-text {
+    padding-top: 2rem;
+  }
+
+  .hero-name {
+    font-size: 48px;
+  }
+
+  .hero-role {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero-image img {
+    width: 140px;
+  }
+
+  .hero-text {
+    padding-top: 0;
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: 32px;
+  }
+
+  .hero-role {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+    padding: 1rem;
+  }
+
+  .home-content {
+    gap: 1rem;
+  }
+
+  .hero-image img {
+    width: 100px;
+  }
+
+  .hero-text {
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: 20px;
+    line-height: 1.3;
+
+    animation:
+      typeNameMobile 3s steps(14, end) forwards,
+      blinkCursor .7s step-end 3;
+  }
+
+  .hero-role {
+    font-size: 11px;
+
+    animation:
+      showRole 0s forwards 3.2s,
+      typeRoleMobile 3s steps(20, end) forwards 3.2s,
+      blinkCursor .7s step-end 3 3.2s;
+  }
+}
+
+@keyframes typeNameMobile {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 14ch;
+  }
+}
+
+@keyframes typeRoleMobile {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 20ch;
+  }
+}

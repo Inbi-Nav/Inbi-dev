@@ -1,0 +1,26 @@
+.char-img  {
+position: absolute;
+inset: 0;
+}
+
+.img1 {
+    opacity:1;
+    
+}
+
+.img2 {
+    opacity:0;
+}
+
+@keyframes swap1 {
+  0%{
+    opacity: 1;
+    animaton: swap1 3s infinitive;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}   
+
+
