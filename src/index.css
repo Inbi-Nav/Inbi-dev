@@ -1,0 +1,19 @@
+:root {
+  /* Backgrounds */
+  --background: #f8f5f2;
+  --surface: #fffaf7;
+
+  /* Text */
+  --text-primary: #29262f;
+  --text-secondary: #625d69;
+
+  /* Pastel colors */
+  --pink: #ffc8dd;
+  --purple: #cdb4db;
+  --blue: #bde0fe;
+  --green: #cdeac0;
+  --yellow: #fff1a8;
+
+  /* Borders */
+  --border: #29262f;
+}
