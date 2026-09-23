@@ -1,3 +1,147 @@
 .navbar {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    margin: 1.5rem;
+    background:hsl(var(--lemon));
+    border: 2px solid hsl(var(--border));
+    border-color: hsl(var(--foreground));
+    border-radius: 1rem;
+    box-shadow: 4px 4px 0 hsl(var(--hover-color));
+    font-family: var(--font-pixel);
+    transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 70px;
+    width: 100px; 
+    display: block; 
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.navbar-links a {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.6rem 0.6rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: 
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-links a:hover {
+    background-color: hsl(var(--hover-color));
+    border-color: hsl(var(--foreground));
+    color:hsl(var(--lemon));
+    transform: translateY(-2px);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap:4rem;
+}
+
+.darkMode-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.darkMode-toggle button img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.language-switch {
+    position: relative;
+    width: 106px;
+    height: 48px;
+    padding: 0;
+    background: hsl(var(--lemon));
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 hsl(var(--foreground));
+    overflow: hidden;
+    font-family: var(--font-pixel);
+}
+
+.language-option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+    z-index: 1;
+}
+
+.language-en {
+    left: 17px;
+}
+
+.language-es {
+    right: 17px;
+}
+
+.language-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 50%;
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    font-weight: 600;
+    z-index: 2;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.language-switch.en .language-circle {
+    transform: translateX(0);
+}
+
+.language-switch.es .language-circle {
+    transform: translateX(62px);
 }
