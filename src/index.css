@@ -1,112 +1,173 @@
-  @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 
-  :root {
-    --rose-gold: 355 60% 72%;
-    
-    --peony: 340 70% 65%;
-    
-    --blush: 345 55% 88%;
+:root {
 
-    --petal: 350 80% 95%;
+  --background: 40 55% 97%;
+  --surface: 52 100% 89%;
+  --surface-soft: 45 55% 95%;
+  --surface-muted: 48 45% 92%;
+  --foreground: 270 20% 14%;
+  --muted-foreground: 270 10% 42%;
+  --lemon: 55 90% 82%;
+  --lemon-light: 55 95% 91%;
+  --lemon-dark: 55 40% 30%;
+  --lemon-accent: 52 95% 72%;
+  --lavender: 270 65% 77%;
+  --lilac: 270 30% 82%;
+  --champagne: 38 55% 93%;
+  --butter: 48 75% 85%;
+  --sage: 65 35% 38%;
+  --border: 270 20% 16%;
+  --border-soft: 270 12% 55%;
+  --border-shadow-color: 280 22% 32%;
+  --hover-color: 55 90% 82%;
+  --active-background: 40 55% 97%;
+  --active-foreground: 270 20% 14%;
+  --icon-primary: 55 40% 30%;
+  --icon-secondary: 55 90% 82%;
+  --pink: 340 55% 78%;
+  --purple: 265 45% 76%;
+  --green: 70 30% 62%;
 
-    --lilac: 270 35% 80%;
+  --gradient-text:
+    linear-gradient(
+      115deg,
+      hsl(var(--lemon-dark)) 0%,
+      hsl(var(--lemon-accent)) 100%
+    );
 
-    --lavender: 265 50% 88%;
+  --gradient-card:
+    linear-gradient(
+      135deg,
+      hsl(var(--surface)) 0%,
+      hsl(var(--champagne)) 100%
+    );
 
-    --sky: 205 75% 84%;
+  --gradient-glow:
+    radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      hsl(var(--lemon) / 0.22) 0%,
+      transparent 70%
+    );
 
-    --baby-blue: 215 70% 90%;
+  /* Animation */
+  --ease-piano: cubic-bezier(0.22, 1, 0.36, 1);
 
-    --mint: 150 45% 85%;
+  /* Typography */
+  --font-pixel: 'Pixelify Sans', sans-serif;
+}
 
-    --sage: 115 35% 80%;
 
-    --butter: 48 85% 83%;
+/* =====================================================
+   DARK MODE
+   ===================================================== */
 
-    --lemon: 55 90% 88%;
+[data-theme="dark"] {
 
-    --peach: 25 75% 86%;
+  /* Main background */
+  --background: 270 20% 10%;
 
-    --apricot: 30 70% 80%;
+  /* Navbar / cards */
+  --surface: 270 18% 13%;
+  --surface-soft: 270 16% 16%;
+  --surface-muted: 270 14% 20%;
 
-    --champagne: 35 45% 93%;
+  /* Main text */
+  --foreground: 48 70% 94%;
 
-    --background: 35 40% 97%;
+  /* Secondary text */
+  --muted-foreground: 45 18% 70%;
 
-    --foreground: 340 25% 18%;
 
-    --muted-foreground: 340 18% 48%;
+  /* =====================================================
+     BRAND / LEMON
+     ===================================================== */
 
-    --border: 270 25% 75%;
+  /* Main visible lemon */
+  --lemon: 55 90% 82%;
 
-    --hover-color: 55 40% 30%;
+  /* Pale lemon */
+  --lemon-light: 55 95% 91%;
 
-    --border-shadow-color: 55 60% 60%;
+  /* Olive lemon */
+  --lemon-dark: 55 40% 30%;
 
-    --gradient-text:
-      linear-gradient(
-        115deg,
-        hsl(var(--peony)) 0%,
-        hsl(var(--rose-gold)) 45%,
-        hsl(var(--lilac)) 100%
-      );
+  /* Button / highlight lemon */
+  --lemon-accent: 52 90% 72%;
 
-    --gradient-card:
-      linear-gradient(
-        135deg,
-        hsl(var(--petal) / 0.85) 0%,
-        hsl(var(--champagne) / 0.80) 100%
-      );
 
-    --gradient-glow:
-      radial-gradient(
-        ellipse 70% 60% at 50% 0%,
-        hsl(var(--peony) / 0.18) 0%,
-        transparent 70%
-      );
-    --ease-piano: cubic-bezier(0.22, 1, 0.36, 1);
+  /* =====================================================
+     SECONDARY COLORS
+     ===================================================== */
 
-    --font-pixel: 'Pixelify Sans', sans-serif;
-  }
+  --lavender: 270 55% 72%;
 
-  [data-theme="dark"] {
-    --background: 260 20% 10%;
+  --lilac: 270 28% 58%;
 
-    --foreground: 35 40% 92%;
+  --champagne: 38 20% 20%;
 
-    --muted-foreground: 260 12% 70%;
+  --butter: 48 45% 62%;
 
-    --border: 265 18% 30%;
-    
-    --hover-color: 55 90% 88%;
+  --sage: 65 30% 42%;
 
-    --rose-gold: 350 45% 65%;
 
-    --peony: 335 48% 60%;
+  /* =====================================================
+     BORDERS / SHADOWS
+     ===================================================== */
 
-    --blush: 340 25% 25%;
+  /* Pale lemon border like the dark navbar mockup */
+  --border: 55 90% 86%;
 
-    --petal: 340 20% 17%;
+  --border-soft: 55 25% 45%;
 
-    --lilac: 270 35% 65%;
+  /* Dark plum offset shadow */
+  --border-shadow-color: 280 28% 22%;
 
-    --lavender: 265 25% 28%;
 
-    --sky: 205 45% 55%;
+  /* =====================================================
+     INTERACTIONS
+     ===================================================== */
 
-    --baby-blue: 215 28% 25%;
+  /* Hover becomes brighter */
+  --hover-color: 55 90% 82%;
 
-    --mint: 150 25% 23%;
+  /* Active nav button */
+  --active-background: 55 40% 30%;
 
-    --sage: 115 22% 30%;
+  --active-foreground: 55 90% 88%;
 
-    --butter: 48 55% 65%;
 
-    --lemon: 55 40% 30%;
+  /* =====================================================
+     ICONS
+     ===================================================== */
 
-    --peach: 25 45% 60%;
+  --icon-primary: 55 90% 82%;
 
-    --apricot: 30 35% 30%;
+  --icon-secondary: 55 40% 30%;
 
-    --champagne: 35 18% 20%;
-  }
+
+  /* =====================================================
+     GRADIENTS
+     ===================================================== */
+
+  --gradient-text:
+    linear-gradient(
+      115deg,
+      hsl(var(--lemon-light)) 0%,
+      hsl(var(--lemon-accent)) 100%
+    );
+
+  --gradient-card:
+    linear-gradient(
+      135deg,
+      hsl(var(--surface)) 0%,
+      hsl(var(--surface-soft)) 100%
+    );
+
+  --gradient-glow:
+    radial-gradient(
+      ellipse 70% 60% at 50% 0%,
+      hsl(var(--lemon) / 0.10) 0%,
+      transparent 70%
+    );
+}

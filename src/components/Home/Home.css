@@ -1,0 +1,120 @@
+body {
+    background: hsl(var(--background));
+
+}
+
+.home {
+    margin: 1.5rem clamp(0.7rem, 2vw, 1.5rem);
+    min-height: 600px;
+    background: hsl(var(--background));
+    border: 3px solid hsl(var(--border));
+    box-shadow: 4px 4px 0 hsl(var(--border-shadow-color));
+    overflow: hidden;
+    font-family: var(--font-pixel);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.terminal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 1rem;
+    background: hsl(var(--lemon));
+    border-bottom: 3px solid hsl(var(--border-shadow-color));
+    box-shadow: 0 5px 0 hsl(var(--border-shadow-color));
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.terminal-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.terminal-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.terminal-dots span {
+    width: 13px;
+    height: 13px;
+    border: 2px solid hsl(var(--border-shadow-color));
+    border-radius: 50%;
+    box-shadow: 1px 1px 0 hsl(var(--border-shadow-color));
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid hsl(var(--border-shadow-color));
+}
+
+.dot-a {
+    background: hsl(var(--pink));
+}
+.dot-b {
+    background: hsl(var(--purple));
+}
+.dot-c {
+    background: hsl(var(--green));
+}
+
+.home-body {
+    background: hsl(var(--background));
+}
+
+.text {
+    margin: 2.5rem 1rem 0.5rem 1rem;
+    padding: 0.45rem 0.8rem;
+    display: inline-block;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    border: 2px solid ;
+    border-radius: 0.35rem;
+    font-size: clamp(1.5rem, 1vw, 1.5rem);
+    min-width: 600;
+}
+
+.my-intro {
+    margin: 1rem;
+    font-family: var(--font-pixel);
+    line-height: 1;
+    width: fit-content;
+}
+
+.intro-greet {
+    display: block;
+    color: hsl(var(--foreground));
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+.intro-name {
+    display: flex;
+    align-items: center;
+    margin-top: 0.2rem;
+    color: hsl(var(--lemon-accent));
+    font-size: clamp(2.3rem, 4.5vw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    paint-order: stroke fill;
+     text-shadow:
+    -2px -2px 0 hsl(var(--border-shadow-color)),
+     2px -2px 0 hsl(var(--border-shadow-color)),
+    -2px  2px 0 hsl(var(--border-shadow-color)),
+     2px  2px 0 hsl(var(--border-shadow-color));
+
+}
+
+

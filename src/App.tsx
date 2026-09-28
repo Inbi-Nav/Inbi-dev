@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+
 export type Language = "es" | "en";
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
                 isDarkMode={isDarkMode}
                 toggleDarkMode={toggleDarkMode}
                 language={language}
+                toggleLanguage={toggleLanguage}
+            />
+            <Home
+                isDarkMode= {isDarkMode}
+                toggleDarkMode= {toggleDarkMode}
+                language= {language}
                 toggleLanguage={toggleLanguage}
             />
         </>
