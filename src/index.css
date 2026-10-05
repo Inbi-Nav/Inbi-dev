@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=VT323&family=Jersey+10&display=swap');
+
 
 :root {
 
@@ -28,6 +30,10 @@
   --pink: 340 55% 78%;
   --purple: 265 45% 76%;
   --green: 70 30% 62%;
+  --blue: 210 90% 40%; 
+  --surface-bg: 55 90% 82%;  
+  --mail: 2 60% 40%;
+
 
   --gradient-text:
     linear-gradient(
@@ -50,105 +56,40 @@
       transparent 70%
     );
 
-  /* Animation */
-  --ease-piano: cubic-bezier(0.22, 1, 0.36, 1);
-
   /* Typography */
   --font-pixel: 'Pixelify Sans', sans-serif;
+  --font-terminal: 'VT323', monospace;
+  --font-heading: 'Jersey 10', monospace;
 }
-
-
-/* =====================================================
-   DARK MODE
-   ===================================================== */
 
 [data-theme="dark"] {
 
-  /* Main background */
   --background: 270 20% 10%;
-
-  /* Navbar / cards */
   --surface: 270 18% 13%;
   --surface-soft: 270 16% 16%;
   --surface-muted: 270 14% 20%;
-
-  /* Main text */
   --foreground: 48 70% 94%;
-
-  /* Secondary text */
   --muted-foreground: 45 18% 70%;
-
-
-  /* =====================================================
-     BRAND / LEMON
-     ===================================================== */
-
-  /* Main visible lemon */
   --lemon: 55 90% 82%;
-
-  /* Pale lemon */
   --lemon-light: 55 95% 91%;
-
-  /* Olive lemon */
   --lemon-dark: 55 40% 30%;
-
-  /* Button / highlight lemon */
   --lemon-accent: 52 90% 72%;
-
-
-  /* =====================================================
-     SECONDARY COLORS
-     ===================================================== */
-
   --lavender: 270 55% 72%;
-
   --lilac: 270 28% 58%;
-
   --champagne: 38 20% 20%;
-
   --butter: 48 45% 62%;
-
   --sage: 65 30% 42%;
-
-
-  /* =====================================================
-     BORDERS / SHADOWS
-     ===================================================== */
-
-  /* Pale lemon border like the dark navbar mockup */
   --border: 55 90% 86%;
-
   --border-soft: 55 25% 45%;
-
-  /* Dark plum offset shadow */
   --border-shadow-color: 280 28% 22%;
-
-
-  /* =====================================================
-     INTERACTIONS
-     ===================================================== */
-
-  /* Hover becomes brighter */
   --hover-color: 55 90% 82%;
-
-  /* Active nav button */
   --active-background: 55 40% 30%;
-
   --active-foreground: 55 90% 88%;
-
-
-  /* =====================================================
-     ICONS
-     ===================================================== */
-
   --icon-primary: 55 90% 82%;
-
   --icon-secondary: 55 40% 30%;
-
-
-  /* =====================================================
-     GRADIENTS
-     ===================================================== */
+  --blue: 210 85% 62%;
+  --surface-bg: 270 20% 10%;
+  --mail: 2 65% 55%;
 
   --gradient-text:
     linear-gradient(
@@ -170,4 +111,25 @@
       hsl(var(--lemon) / 0.10) 0%,
       transparent 70%
     );
+}
+
+[data-theme="dark"] .wave {
+    filter: grayscale(1) brightness(1.4);
+}
+ 
+html, body {
+   background: hsl(var(--background));
+    font-family: var(--font-terminal);
+    line-height: 1.6;
+    cursor: url('./assets/pixel_cursor.png') 0 0, auto;
+} 
+
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: url('./assets/pixel_pointer.png') 2 1, pointer;
 }

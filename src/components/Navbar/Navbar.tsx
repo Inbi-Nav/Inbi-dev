@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./Navbar.css";
 
-import darkModeLogo from "../../assets/logo_light_mode.png";
-import lightModeLogo from "../../assets/logo_dark_mode.png";
+import webLogo from "../../assets/web_logo.png";
 
 import darkModeSign from "../../assets/light_mode_sign.png";
 import lightModeSign from "../../assets/dark_mode_sign.png";
@@ -50,11 +49,11 @@ function Navbar({
     return (
         <nav className="navbar">
             <div className="navbar-logo">
-                <img src={isDarkMode ? darkModeLogo : lightModeLogo} alt="Logo"/>
+                <img src={webLogo} alt="Web Logo"/>
             </div>
 
             <div id="navbar-menu" className={`navbar-links ${isMenuOpen ? "open" : ""}`} >
-                <a href="#home" onClick={() => setIsMenuOpen(false)}>
+                <a href="#home" onClick={() => setIsMenuOpen(false)} >
                     {text.home}
                 </a>
                 <a href="#about" onClick={() => setIsMenuOpen(false)}>
