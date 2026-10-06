@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 type Language = "en" | "es";
 
 type HomeProps = {
-    isDarkMode: boolean;
-    toggleDarkMode: () => void;
     language: Language;
     toggleLanguage: () => void;
 }
@@ -38,10 +36,7 @@ const translations = {
     }
 };
 function Home({
-    isDarkMode,
-    toggleDarkMode,
     language,
-    toggleLanguage
 }: HomeProps) 
 {
 
