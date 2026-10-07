@@ -11,8 +11,7 @@ body {
     padding: 0 0 ;
     background: hsl(var(--background));
     border: 3px solid hsl(var(--border));
-    box-shadow:
-    5px 5px 0 hsl(var(--border-shadow-color));
+    box-shadow: 5px 5px 0 hsl(var(--border-shadow-color));
     overflow: hidden;
     transition:
         background-color 0.3s ease,
@@ -96,6 +95,11 @@ body {
     line-height: 1;
     white-space: nowrap;
 }
+.welcome-text {
+    overflow: hidden;
+    padding-left: 0.35rem;
+    white-space: nowrap;
+}
 
 .wave {
     display: inline-block;
@@ -117,12 +121,6 @@ body {
     50% { 
         transform: rotate(10deg); 
     }
-}
-
-.welcome-text {
-    overflow: hidden;
-    padding-left: 0.35rem;
-    white-space: nowrap;
 }
 
 .my-intro {

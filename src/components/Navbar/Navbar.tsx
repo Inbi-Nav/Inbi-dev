@@ -56,7 +56,7 @@ function Navbar({
                 <a href="#home" onClick={() => setIsMenuOpen(false)} >
                     {text.home}
                 </a>
-                <a href="#about" onClick={() => setIsMenuOpen(false)}>
+                <a href="#about-me" onClick={() => setIsMenuOpen(false)}>
                     {text.about}
                 </a>
                 <a href="#skills" onClick={() => setIsMenuOpen(false)}>

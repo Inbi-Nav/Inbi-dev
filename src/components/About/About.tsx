@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 type Language = "en" | "es";
+import  "./About.css"
 
 type AboutProps = {
     language: Language;
@@ -8,128 +10,179 @@ type AboutProps = {
 
 const translations = {
     es: {
-        knowMe: "CONÓCEME MEJOR",
+        about: "SOBRE MI & MI TRAYECTORIA",
+        knowMe: "CONÓCEME\nMEJOR",
         profile: "PERFIL",
-        description: "Desarrolladora Full-Stack con experiencia en el diseño y desarrollo de aplicaciones web modernas, intuitivas y escalables. Me apasiona crear soluciones digitales enfocada en experiencia de usuaruio con una arquitectura sólida, eficiente y mantenible.\n Me apasiona el aprendizaje continuo y explorar nuevas tecnologías para ampliar y fortalecer mi stack tecnológico. Cuando se trata de resolver errores, es cuando mi espíritu de programadora realmente cobra vida. Disfruto enfrentándome a nuevos desafíos, depurando código, comprendiendo la causa raíz de los problemas y encontrando soluciones efectivas.", 
+        description: "Desarrolladora Full-Stack con experiencia en el diseño y desarrollo de aplicaciones web modernas, intuitivas y escalables. Me apasiona crear soluciones digitales enfocada en experiencia de usuaruio con una arquitectura sólida, eficiente y mantenible.\n Me apasiona el aprendizaje continuo y explorar nuevas tecnologías para ampliar mi stack tecnológico. Dato curioso sobre mí: cuando se trata de resolver bugs, es ahí donde realmente sale mi espíritu de programador. Para algunos desarrolladores, hacer debugging es una pesadilla (¡sin duda, todavía lo es!), pero a mí me gusta el reto de investigar el código, entender qué salió mal y encontrar una solución eficiente.", 
         education: "EDUCACIÓN",
+        timeline: [
+            {
+                date: "2021-2023",
+                title: "Sistemas Microinformáticos y Redes (SMIX)",
+                school: "Institut Puig Castellar, Barcelona",
+                tags: ["Hardware", "Infraestructura IT", "Sistemas", "Networking"],
+            },
+            {
+                date: "2023-2025",
+                title: "Desarrollo de Aplicaciones Multiplataforma (DAM)",
+                school: "Institut Pedralbes, Barcelona",
+                tags: ["Desarrollo de software", "Desarrollo Full-Stack"],
+            },
+            {
+                date: "2025-2026",
+                title: "Full-Stack Developer PHP Bootcamp",
+                school: "IT Academy, Barcelona",
+                tags: ["PHP", "Laravel", "React", "SQL"],
+            },
+        ],
         language: "IDIOMAS",
-        spanish: "ESPAÑOL \n FLUiDO",
-        english: "INGLÉS \n FLUIDO" ,
-        catalan: "CATALÁN \n INTERMEDIO"
+        languages: [
+            { name: "ESPAÑOL", level: "FLUIDO", score: 5 },
+            { name: "INGLÉS", level: "FLUIDO/NATIVO", score: 5 },
+            { name: "CATALÁN", level: "INTERMEDIO", score: 3 },
+        ],
     },
     en: {
-        knowMe: "KNOW ME BETTER",
+        about: "ABOUT ME & MY JOURNEY ",
+        knowMe: "KNOW\nME BETTER",
         profile: "PROFILE",
-        description: "Full-Stack Developer with experience designing and building modern, intuitive, and scalable web applications. I’m passionate about creating digital solutions focused on user experience with a solid, efficient, and maintainable architecture.\n I’m very keen about continuous learning and exploring new technologies to expand my tech stack. When it comes to solving bugs, that’s where my programmer spirit truly comes alive. I enjoy challenging myself to debug code, understand the root cause of problems, and find effective solutions.",
+        description: "Full-Stack Developer with experience designing and building modern, intuitive, and scalable web applications. I’m passionate about creating digital solutions focused on user experience with a solid, efficient, and maintainable architecture.\n I’m very keen about continuous learning and exploring new technologies to expand my tech stack. Fun fact about me: when it comes to solving bugs, that’s where my programmer spirit truly comes alive. For some devs, debugging is a nightmare (no doubt! it still is), but I enjoy the challenge of digging into the code, figuring out what went wrong, and coming up with an efficient solution",
         education: "EDUCATION",
+        timeline: [
+            {
+                date: "2021-2023",
+                title: "Microinformatics Systems and Network (SMIX)",
+                school: "Institut Puig Castellar, Barcelona",
+                tags: ["Hardware", "Infraestructura IT", "Systems", "Networking"],
+            },
+            {
+                date: "2023-2025",
+                title: "Multiplatform Application Development (DAM)",
+                school: "Institut Pedralbes, Barcelona",
+                tags: ["Software Development", "Full-Stack Developemnt"],
+            },
+            {
+                date: "2025-2026",
+                title: "Bootcamp Full-Stack Developer PHP",
+                school: "IT Academy, Barcelona",
+                tags: ["PHP", "Laravel", "React", "SQL"],
+            },
+        ],
         language: "LANGUAGES",
-        spanish: "SPANISH \n FLUENT",
-        english: "ENGLISH \n FLUENT",
-        catalan: "CATALAN \n INTERMIDIATE"
-        
+        languages: [
+            { name: "Spanish", level: "FLUENT", score: 5 },
+            { name: "English", level: "FLUENT/NATIVE", score: 5 },
+            { name: "Catalan", level: "INTERMIDIATE", score: 3 },
+        ],
     }
 };
 
 function About({
     language,
-    toggleLanguage
 }: AboutProps)  
 {
 
     const text = translations[language];
     return (
         <div className="about-me" id="about-me">
-            <div className="know-me"> {text.knowMe}</div> 
-
-            <div className="terminals">
-            {/* Profile terminal*/}
+        <h2 className="about-box">&gt;<span className="about-text">{text.about}</span></h2>
+            {/* Main layout */}
+            <div className='main-container'>
+                {/* introduccion */}
+                <div className='Introduction'> 
+                    <h2 className="know-me"> {text.knowMe.split("\n").map((line, index) => (
+                        <span key={index}>{line}</span>))}</h2> 
+                </div>
+                {/* Profile terminal*/}
                 <div className="profile-terminal">
                     <div className="profile-header">
-                        <span className="dot-a"></span>
-                        <span className="dot-b"></span>
-                        <span className="dot-c"></span>
+                        <div className='terminal-dots'>
+                            <span className="dot-a"></span>
+                            <span className="dot-b"></span>
+                            <span className="dot-c"></span>
+                        </div>
                     </div>
                     <div className='profile-title'>
                         <i className="fa fa-user"></i>
                         <h3>{text.profile}</h3>
                     </div>
-                    <p>{text.description}</p>
+                    <p className='description'>{text.description}</p>
+                    <div className='stats-container'>
+                        <div className='role-box'>
+                            <i className='fa fa-code'></i>
+                            <p className='role-text'>Full-Stack Developer</p>
+                        </div>
+                        <div className='experience-box'>
+                            <span className="experience-number">1~</span>
+                            <span className='experience-label'>YEAR EXPERIENCE </span>
+                        </div>
+                        <div className='coding-stat'>
+                            <span className="coding-number">3+</span>
+                            <span className='coding-label'>YEARS OF CODING </span>
+                        </div>
+                    </div>
                 </div>
-            {/* Education terminal*/}
+                {/* Education terminal*/}
             <div className="education-terminal">
-                    <div className="education-header">
+                <div className="education-header">
+                    <div className='terminal-dots'>
                         <span className="dot-a"></span>
                         <span className="dot-b"></span>
                         <span className="dot-c"></span>
                     </div>
-                    <div className='profile-title'>
-                        <i className="fa fa-graduation-cap"></i>
-                        <h3>{text.education}</h3>
-                    </div>
-                    <div className='education-timeline'>
-                        <h4>2025-2023</h4>
-                        <p>Desarrollo Aplicaciones Multiplataformas (DAM)</p>
-                        <p>Institut Pedralbes \n Barcelona</p>
-                        <h4>2021-2023</h4>
-                        <p>SISTEMAS MICROINFORMÁTICOS Y REDES (SMIX)</p>
-                        <p>Institut Pedralbes \n Barcelona</p>
                 </div>
-            {   /* Languages terminal*/}
-                <div className='languages-terminal'>
-                    <div className="languages-header">
-                        <span className="dot-a"></span>
-                        <span className="dot-b"></span>
-                        <span className="dot-c"></span>
-                    </div>
-                    </div>
-                        <div className='language-title'>
-                        <i className='far fa-comment-dots'></i>
-                        <h3>{text.language}</h3>
-                    </div>
-                    <table>
-                        <tr>
-                            <td>{text.spanish}</td>
-                            <td>
-                                <span className="square-a"></span>
-                                <span className="square-b"></span>
-                                <span className="square-c"></span>
-                                <span className="square-d"></span>
-                                <span className="square-e"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> {text.english}</td>
-                            <td>
-                                <span className="square-a"></span>
-                                <span className="square-b"></span>
-                                <span className="square-c"></span>
-                                <span className="square-d"></span>
-                                <span className="square-e"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> {text.catalan}</td>
-                            <td>
-                                <span className="square-a"></span>
-                                <span className="square-b"></span>
-                                <span className="square-c"></span>
-                                <span className="square-d"></span>
-                                <span className="square-e"></span>
-                            </td>
-                        </tr>
-                    </table>
+                <div className='education-title'>
+                    <i className="fa fa-graduation-cap"></i>
+                    <h3>{text.education}</h3>
                 </div>
-                
+                <div className='education-timeline'>
+                    <ul className='timeline-content'>
+                        <li className='event' data-date="2021-2023">
+                            <h3>{text.timeline[0].title}</h3>
+                            <p>{text.timeline[0].school}</p>
+                            <p> {text.timeline[0].tags.join(" · ")}</p>
+                        </li>
+                        <li className='event' data-date="2023-2025">
+                            <h3>{text.timeline[1].title}</h3>
+                            <p>{text.timeline[1].school}</p>
+                            <p>{text.timeline[1].tags.join(" · ")}</p>
+                        </li>
+                        <li className='event' data-date="2025-2026">
+                            <h3>{text.timeline[2].title}</h3>
+                            <p>{text.timeline[2].title}</p>
+                            <p>{text.timeline[2].tags.join(" · ")}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
+            {/* Languages terminal*/}
+            <div className='languages-terminal'>
+                <div className="languages-header">
+                    <div className='terminal-dots'>
+                        <span className="dot-a"></span>
+                        <span className="dot-b"></span>
+                        <span className="dot-c"></span>
+                    </div>
+                </div>
+                <div className='language-title'>
+                    <i className='fa fa-language'></i>
+                    <h3>{text.language}</h3>
+                </div>
+                <ul className="language-list">
+                    {text.languages.map((lang) => (
+                        <li className="language-item" key={lang.name}>
+                            <div className="language-info">
+                                <span className="language-name">{lang.name}</span>
+                                <span className="language-level">{lang.level}</span>
+                                </div>
+                                <div className="language-squares" role="img" aria-label={`${lang.score}/5`}> {[1, 2, 3, 4, 5].map((n) => (
+                                <span key={n}className={`square ${n <= lang.score ? "filled" : ""}`}></span>))}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-    )
-
-}
-
+   </div> 
+)}
 export default About;
-
-
-
-
-
