@@ -20,6 +20,7 @@ const translations = {
         home: "INICIO",
         about: "SOBRE MI",
         skills: "SKILLS",
+        experience: "EXPERIENCIA",
         projects: "PROYECTOS",
         contact: "CONTACTO"
     },
@@ -28,6 +29,7 @@ const translations = {
         home: "HOME",
         about: "ABOUT ME",
         skills: "SKILLS",
+        experience: "EXPERIENCE",
         projects: "PROJECTS",
         contact: "CONTACT"
     },
@@ -61,6 +63,9 @@ function Navbar({
                 </a>
                 <a href="#skills" onClick={() => setIsMenuOpen(false)}>
                     {text.skills}
+                </a>
+                <a href="#experience" onClick={() => setIsMenuOpen(false)}>
+                    {text.experience}
                 </a>
                 <a href="#projects" onClick={() => setIsMenuOpen(false)}>
                     {text.projects}

@@ -46,12 +46,6 @@ function Home({
     const [isTypingBack, setIsTypingBack] = useState(false);
     useEffect(() => {
     const currentPhrase = text.phrases[phraseIndex];
-        console.log("Typing state", {
-            phraseIndex,
-            currentPhrase: text.phrases[phraseIndex],
-            displayPhrase,
-            isTypingBack
-        });
 
     let timeout: number;
     if (!isTypingBack && displayPhrase.length < currentPhrase.length) {
@@ -96,7 +90,7 @@ function Home({
 ]);
 
     return (
-        <div className="home" id="home">
+        <section className="home" id="home">
             <div className="terminal-header">
                 <div className="terminal-dots">
                     <span className="dot-a"></span>
@@ -145,7 +139,7 @@ function Home({
                     </div>
                 </div>
         </div>
-    </div> 
+    </section> 
     )
 }
 export default Home;

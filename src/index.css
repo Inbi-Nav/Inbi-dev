@@ -34,7 +34,15 @@
   --light-blue: 210 50% 82%;
   --surface-bg: 55 90% 82%;  
   --mail: 2 60% 40%;
-
+  --lila: 265 65% 88%;
+  --rosa: 335 75% 86%;
+  --azul: 205 75% 85%;
+  --verde: 85 55% 84%;
+   --yellow-dark: 55 85% 66%;
+  --lila-dark: 265 55% 74%;
+  --rosa-dark: 335 65% 74%;
+  --verde-dark: 85 45% 66%;
+  --azul-dark: 205 65% 68%;
 
   --gradient-text:
     linear-gradient(
@@ -57,7 +65,6 @@
       transparent 70%
     );
 
-  /* Typography */
   --font-pixel: 'Pixelify Sans', sans-serif;
   --font-terminal: 'VT323', monospace;
   --font-heading: 'Jersey 10', monospace;

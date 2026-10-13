@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
+import Skill from "./components/Skills/Skill";
+
 export type Language = "es" | "en";
 
 function App() {
@@ -36,6 +38,10 @@ function App() {
                 toggleLanguage={toggleLanguage}
             />
             <About
+                language={language}
+                toggleLanguage={toggleLanguage}
+            />
+            <Skill
                 language={language}
                 toggleLanguage={toggleLanguage}
             />

@@ -23,6 +23,7 @@
 .about-box:hover{
     background-color: hsl(var(--lemon));
     transform: translate(6px,-6px);
+    color: black;
 }
 
 .about-text {
@@ -77,16 +78,15 @@
     font-size: clamp(3rem, 6vw, 7rem);
     transform: scaleX(1.5);
     transform-origin: left;
-
      text-shadow:
        -2px -2px 0 black,
-         0   -2px 0 black,
-         2px -2px 0 black,
-        -2px  0   0 black,
-         2px  0   0 black,
-        -2px  2px 0 black,
-         0    2px 0 black,
-         2px  2px 0 black;
+        0 -2px 0 black,
+        2px -2px 0 black,
+        -2px 0 0 black,
+        2px 0 0 black,
+        -2px 2px 0 black,
+        0 2px 0 black,
+        2px 2px 0 black;
 }
 
 .profile-terminal {
@@ -489,11 +489,14 @@
     font-size: clamp(1.2rem, 1.4vw, 1.5rem);
     line-height: 1.1;
     color: hsl(var(--foreground));
+    letter-spacing: 4px;
+
 }
 
 .language-level {
     font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.1rem);
     color: hsl(var(--foreground) / 0.75);
+    letter-spacing: 2px;
 }
 
 .language-squares {
@@ -529,7 +532,7 @@
         grid-row: auto;
     }
 
-    .main-container > * {
+    .main-container {
         min-width: 0;
     }
 

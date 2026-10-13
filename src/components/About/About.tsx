@@ -72,7 +72,7 @@ const translations = {
         languages: [
             { name: "Spanish", level: "FLUENT", score: 5 },
             { name: "English", level: "FLUENT/NATIVE", score: 5 },
-            { name: "Catalan", level: "INTERMIDIATE", score: 3 },
+            { name: "Catalan", level: "INTERMEDIATE", score: 3 },
         ],
     }
 };
@@ -84,16 +84,13 @@ function About({
 
     const text = translations[language];
     return (
-        <div className="about-me" id="about-me">
+        <section className="about-me" id="about-me">
         <h2 className="about-box">&gt;<span className="about-text">{text.about}</span></h2>
-            {/* Main layout */}
             <div className='main-container'>
-                {/* introduccion */}
                 <div className='Introduction'> 
                     <h2 className="know-me"> {text.knowMe.split("\n").map((line, index) => (
                         <span key={index}>{line}</span>))}</h2> 
                 </div>
-                {/* Profile terminal*/}
                 <div className="profile-terminal">
                     <div className="profile-header">
                         <div className='terminal-dots'>
@@ -122,7 +119,6 @@ function About({
                         </div>
                     </div>
                 </div>
-                {/* Education terminal*/}
             <div className="education-terminal">
                 <div className="education-header">
                     <div className='terminal-dots'>
@@ -155,7 +151,6 @@ function About({
                     </ul>
                 </div>
             </div>
-            {/* Languages terminal*/}
             <div className='languages-terminal'>
                 <div className="languages-header">
                     <div className='terminal-dots'>
@@ -183,6 +178,6 @@ function About({
                 </ul>
             </div>
         </div>
-   </div> 
+   </section> 
 )}
 export default About;

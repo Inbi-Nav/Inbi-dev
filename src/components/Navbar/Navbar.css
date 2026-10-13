@@ -56,13 +56,14 @@
 
 .navbar-links a {
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.7rem;
     padding: 0.55rem 0.8rem;
     border: 2px solid transparent;
     color: hsl(var(--foreground));   
+    font-family: var(--font-terminal);
     border-radius: 0.35rem;
     white-space: nowrap;
+    letter-spacing: 1px;
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease,
@@ -213,7 +214,7 @@
     }
 
     .navbar-links a {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         padding: 0.5rem;
     }
 
@@ -221,7 +222,6 @@
         gap: 1rem;
     }
 }
-
 
 @media (max-width: 768px) {
     .navbar {
