@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 type Language = "en" | "es";
 import  "./About.css"

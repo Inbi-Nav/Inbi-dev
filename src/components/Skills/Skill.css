@@ -186,17 +186,14 @@
     background-color: hsl(var(--lila-hover, var(--purple)));
 }
 
-.json:hover, .react:hover, .php-backend:hover, .vscode:hover {
+.json:hover, .react:hover {
     background-color: hsl(var(--rosa-hover, var(--pink)));
 }
 
-.typescript:hover {
+.typescript:hover, .php-backend:hover, .vscode:hover {
     background-color: hsl(var(--verde-hover, var(--green)));
 }
 
-.tailwind:hover, .laravel:hover, .postman:hover {
-    background-color: hsl(var(--azul-hover, var(--light-blue)));
-}
 
 @media (max-width: 800px) {
     .skills {
