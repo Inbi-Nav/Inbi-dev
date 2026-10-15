@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skill from "./components/Skills/Skill";
+import Experience from "./components/Experience/Experience";
+
 
 export type Language = "es" | "en";
 
@@ -42,6 +44,10 @@ function App() {
                 toggleLanguage={toggleLanguage}
             />
             <Skill
+                language={language}
+                toggleLanguage={toggleLanguage}
+            />
+            <Experience
                 language={language}
                 toggleLanguage={toggleLanguage}
             />

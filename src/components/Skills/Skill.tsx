@@ -9,6 +9,7 @@ type Language = "en" | "es";
 
 type SkillProps = {
   language: Language;
+  toggleLanguage: () => void;
 };
 
 const translations = {

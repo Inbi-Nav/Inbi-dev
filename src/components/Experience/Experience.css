@@ -1,0 +1,176 @@
+.experience {
+    width: 90%;
+    min-height: 0;
+    margin: 110px auto;
+    padding: 0 0;
+    overflow: visible;
+}
+   
+.exp-box {
+    display: inline-flex;
+    padding: 0.5rem 0.5rem;
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+    border: 2px solid hsl(var(--border));
+    border-radius: 0.35rem;
+    box-shadow: 5px 5px 0 hsl(var(--border-shadow-color));
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1;
+}
+
+.exp-box:hover{
+    background-color: hsl(var(--lemon));
+    transform: translate(6px,-6px);
+    color: black;
+}
+
+.exp-section {
+    width: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 0 0 ;
+}
+
+.exp-header {
+    margin-top: 4rem;
+    position: relative;
+    padding: 0 2.5rem;                      
+    display: flex;
+    justify-content: center;
+    font-size: clamp(2.4rem, 9vw, 5.5rem);  
+    overflow: anywhere;
+    transform: scaleX(1.5);
+    line-height: 0;
+    color: hsl(var(--foreground));
+}
+
+.cards-container { width: 100%}
+
+.cards-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.exp-event {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.5rem;
+    background: hsl(var(--background));
+    border: 3px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 0 hsl(var(--border-shadow-color));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exp-event-0 { --accent: var(--lila); }
+.exp-event-1 { --accent: var(--rosa); }
+.exp-event-2 { --accent: var(--lemon); } 
+
+
+.exp-event:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 hsl(var(--border-shadow-color));
+}
+
+.exp-date {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    color: hsl(270 20% 14%);            
+    background: hsl(var(--accent));
+    border: 2px solid hsl(var(--border));
+    border-radius: 0.35rem;
+    box-shadow: 3px 3px 0 hsl(var(--border-shadow-color));
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.3rem);
+    line-height: 1.2;
+}
+
+.exp-content {
+    padding-left: 1.5rem;
+    border-left: 5px solid hsl(var(--accent));
+}
+
+.exp-content h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.7rem, 1.3rem + 1.2vw, 2.4rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    color: hsl(var(--foreground));
+}
+
+.exp-content b {
+    display: block;
+    margin: 0.3rem 0 0.6rem;
+    font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
+    font-weight: 400;
+    color: hsl(var(--muted-foreground));
+}
+
+.exp-content p {
+    margin: 0 0 1rem;
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+    line-height: 1.5;
+    color: hsl(var(--foreground));
+}
+
+.exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.exp-tag {
+    padding: 0.2rem 0.8rem;
+    color: hsl(270 20% 14%);
+    border: 2px solid hsl(var(--border));
+    border-radius: 0.35rem;
+    box-shadow: 2px 2px 0 hsl(var(--border-shadow-color));
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.exp-tag-0, .exp-tag-4  { background: hsl(var(--lila)); }
+.exp-tag-1, .exp-tag-5 { background: hsl(var(--rosa)); }
+.exp-tag-2, .exp-tag-6 { background: hsl(var(--lemon-accent)); }
+.exp-tag-3 { background: hsl(var(--azul)); }
+
+.exp-tag-0:hover, .exp-tag-4:hover  { background: hsl(var(--lila-dark)); }
+.exp-tag-1:hover, .exp-tag-5:hover { background: hsl(var(--rosa-dark)); }
+.exp-tag-2:hover, .exp-tag-6:hover { background: hsl(var(--yellow-dark)); }
+.exp-tag-3:hover { background: hsl(var(--azul-dark)); }
+
+@media (max-width: 800px) {
+    .exp-event {
+        grid-template-columns: 1fr;      
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+
+    .exp-date {
+        justify-self: start;
+    }
+
+    .exp-content {
+        padding-left: 1rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .exp-event {
+        box-shadow: 4px 4px 0 hsl(var(--border-shadow-color));
+    }
+}
