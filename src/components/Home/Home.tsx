@@ -1,46 +1,15 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./Home.css";
+import { translations, type Language } from "../../Translations";
 import { useState, useEffect } from 'react';
-type Language = "en" | "es";
 
 type HomeProps = {
     language: Language;
-    toggleLanguage: () => void;
 }
-const translations = {
-    es: {
-        greet: "BIENVENIDO/A, USER",
-        intro: "Hola, soy",
-        fullName: "INBISAT NAVEED",
-        profession: "Rol: Desarrolladora Full-Stack",
-        description: "Desarrolladora Full-Stack enfocada en crear aplicaciones web escalables, con código limpio y mantenible, utilizando tecnologías modernas. Desarrollo soluciones intuitivas centradas en el usuario con un enfoque en el rendimiento y la usabilidad.",
-        phrases: [
-            "me gusta desarrollar aplicaciones web.",
-            "disfruto aprender nuevas tecnologías.",
-            "me gusta convertir ideas en aplicaciones funcionales.",
-            "convierto problemas en soluciones."
-        ]
-    },
-    en: {
-        greet: "WELCOME,  USER",
-        intro: "Hi, I'm",
-        fullName: "INBISAT NAVEED",
-        profession: "Role:  Full-Stack Developer",
-        description: "Full-Stack Developer focused on building scalable web applications with clean, maintainable code and modern technologies. I build intuitive, user-focused solutions with an focus on performance and usability.",
-        phrases: [
-            "love building web applications.",
-            "enjoy learning new technologies.",
-            "like turning ideas into functional applications.",
-            "turn problems into solutions."
-        ]
-    }
-};
-function Home({
-    language,
-}: HomeProps) 
-{
 
-    const text = translations[language];
+function Home({ language }: HomeProps) {
+    const text = translations[language].home;
+
     const [phraseIndex, setPhraseIndex] = useState(0);
     const [displayPhrase, setDisplayPhrase] = useState("");
     const [isTypingBack, setIsTypingBack] = useState(false);

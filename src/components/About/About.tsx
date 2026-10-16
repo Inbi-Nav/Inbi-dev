@@ -1,87 +1,14 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-type Language = "en" | "es";
 import  "./About.css"
+import { translations, type Language } from "../../Translations";
+
 
 type AboutProps = {
     language: Language;
-    toggleLanguage: () => void;
 }
 
-const translations = {
-    es: {
-        about: "SOBRE MI & MI TRAYECTORIA",
-        knowMe: "CONÓCEME\nMEJOR",
-        profile: "PERFIL",
-        description: "Desarrolladora Full-Stack con experiencia en el diseño y desarrollo de aplicaciones web modernas, intuitivas y escalables. Me apasiona crear soluciones digitales enfocada en experiencia de usuaruio con una arquitectura sólida, eficiente y mantenible.\n Me apasiona el aprendizaje continuo y explorar nuevas tecnologías para ampliar mi stack tecnológico. Dato curioso sobre mí: cuando se trata de resolver bugs, es ahí donde realmente sale mi espíritu de programador. Para algunos desarrolladores, hacer debugging es una pesadilla (¡sin duda, todavía lo es!), pero a mí me gusta el reto de investigar el código, entender qué salió mal y encontrar una solución eficiente.", 
-        education: "EDUCACIÓN",
-        timeline: [
-            {
-                date: "2021-2023",
-                title: "Sistemas Microinformáticos y Redes (SMIX)",
-                school: "Institut Puig Castellar, Barcelona",
-                tags: ["Hardware", "Infraestructura IT", "Sistemas", "Networking"],
-            },
-            {
-                date: "2023-2025",
-                title: "Desarrollo de Aplicaciones Multiplataforma (DAM)",
-                school: "Institut Pedralbes, Barcelona",
-                tags: ["Desarrollo de software", "Desarrollo Full-Stack"],
-            },
-            {
-                date: "2025-2026",
-                title: "Full-Stack Developer PHP Bootcamp",
-                school: "IT Academy, Barcelona",
-                tags: ["PHP", "Laravel", "React", "SQL"],
-            },
-        ],
-        language: "IDIOMAS",
-        languages: [
-            { name: "ESPAÑOL", level: "FLUIDO", score: 5 },
-            { name: "INGLÉS", level: "FLUIDO/NATIVO", score: 5 },
-            { name: "CATALÁN", level: "INTERMEDIO", score: 3 },
-        ],
-    },
-    en: {
-        about: "ABOUT ME & MY JOURNEY ",
-        knowMe: "KNOW\nME BETTER",
-        profile: "PROFILE",
-        description: "Full-Stack Developer with experience designing and building modern, intuitive, and scalable web applications. I’m passionate about creating digital solutions focused on user experience with a solid, efficient, and maintainable architecture.\n I’m very keen about continuous learning and exploring new technologies to expand my tech stack. Fun fact about me: when it comes to solving bugs, that’s where my programmer spirit truly comes alive. For some devs, debugging is a nightmare (no doubt! it still is), but I enjoy the challenge of digging into the code, figuring out what went wrong, and coming up with an efficient solution",
-        education: "EDUCATION",
-        timeline: [
-            {
-                date: "2021-2023",
-                title: "Microinformatics Systems and Network (SMIX)",
-                school: "Institut Puig Castellar, Barcelona",
-                tags: ["Hardware", "Infraestructura IT", "Systems", "Networking"],
-            },
-            {
-                date: "2023-2025",
-                title: "Multiplatform Application Development (DAM)",
-                school: "Institut Pedralbes, Barcelona",
-                tags: ["Software Development", "Full-Stack Developemnt"],
-            },
-            {
-                date: "2025-2026",
-                title: "Bootcamp Full-Stack Developer PHP",
-                school: "IT Academy, Barcelona",
-                tags: ["PHP", "Laravel", "React", "SQL"],
-            },
-        ],
-        language: "LANGUAGES",
-        languages: [
-            { name: "Spanish", level: "FLUENT", score: 5 },
-            { name: "English", level: "FLUENT/NATIVE", score: 5 },
-            { name: "Catalan", level: "INTERMEDIATE", score: 3 },
-        ],
-    }
-};
-
-function About({
-    language,
-}: AboutProps)  
-{
-
-    const text = translations[language];
+function About({ language }: AboutProps) {
+    const text = translations[language].about;
     return (
         <section className="about-me" id="about-me">
         <h2 className="about-box">&gt;<span className="about-text">{text.about}</span></h2>

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
+import { type Language } from "./Translations";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Skill from "./components/Skills/Skill";
 import Experience from "./components/Experience/Experience";
+import Project from "./components/Project/Project";
 
-
-export type Language = "es" | "en";
 
 function App() {
 
@@ -37,7 +37,6 @@ function App() {
             />
             <Home
                 language= {language}
-                toggleLanguage={toggleLanguage}
             />
             <About
                 language={language}
@@ -48,6 +47,10 @@ function App() {
                 toggleLanguage={toggleLanguage}
             />
             <Experience
+                language={language}
+                toggleLanguage={toggleLanguage}
+            />
+             <Project
                 language={language}
                 toggleLanguage={toggleLanguage}
             />

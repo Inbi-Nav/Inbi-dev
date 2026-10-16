@@ -1,39 +1,19 @@
 import "./Skill.css";
+import { translations, type Language } from "../../Translations";
 import Languages from "../../assets/Languages.png";
 import frontend from "../../assets/FE.png";
 import backend from "../../assets/BE.png";
 import database from "../../assets/DB.png";
 import tools from "../../assets/Tools.png";
 
-type Language = "en" | "es";
 
 type SkillProps = {
   language: Language;
-  toggleLanguage: () => void;
 };
 
-const translations = {
-  es: {
-    skill: "HABILIDADES",
-    label: "MI STACK\nTECNOLÓGICO",
-    languages: "LENGUAJES",
-    database: "BASES DE DATOS",
-    tools: "HERRAMIENTAS",
-    description: "Herramientas que dan forma a mis ideas",
-  },
-
-  en: {
-    skill: "SKILLS",
-    label: "MY TECH\nSTACK",
-    languages: "LANGUAGES",
-    database: "DATABASES",
-    tools: "TOOLS",
-    description: "Tools that shape my ideas",
-  },
-};
 
 function Skill({ language }: SkillProps) {
-  const text = translations[language];
+  const text = translations[language].skills;
   return (
     <section className="skills" id="skills">
         <span className="skills-tag">&gt; {text.skill}</span>
