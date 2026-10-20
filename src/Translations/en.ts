@@ -82,5 +82,38 @@ const en = {
             },
         ],
     },
+    projects: {
+        text: "PROJECTS",
+        title: "MY PROJECTS",
+        label: "A selection of projects where I combine creativity, logic, and user experience.",
+        projects: [
+            {
+                id: "midori",
+                name:"Midori",
+                descriptionLabel: "PROJECT DESCRIPTION", 
+                label: "E-commerce platform",
+                github: "https://github.com/Inbi-Nav/Midori-Front",
+                description: "Midori is an E-commerce platform that features user authentication, product catalog browsing, simulated payments, and order tracking. It incorporates role-based access control and an admin panel for order management, following the MVC architecture and relational database design principles.",
+                tags: ["PHP", "Laravel", "MySQL", "Blade", "Tailwind CSS", "Livewire", "Docker", "Git"]
+            },
+            {
+                id: "mindcode",
+                name: "MINDCODE",
+                label: "Academic Group Project",
+                github: "https://github.com/inspedralbes/prj-final-front-back-G5-mindcode",
+                descriptionLabel: "PROJECT DESCRIPTION", 
+                description: "Mindcode is a full-stack educational platform that provides AI-powered programming assistance to students through contextualized responses and automated quizzes based on their previous interactions. Implemented RESTful APIs, user and class management, and role-based access control. Used Docker for containerization and GitHub Actions to automate CI/CD and production deployments.",
+                tags: ["React", "JavaScript", "Node.js", "MySQL", "MongoDB", "Docker", "Git"]
+            },
+            {
+                id: "etl",
+                name: "ETL project",
+                github: "https://github.com/Inbi-Nav/ETL-Project",
+                descriptionLabel: "PROJECT DESCRIPTION", 
+                description: "Developed an automated ETL pipeline to generate synthetic employee data, upload CSV files to cloud storage, and orchestrate daily data extraction, transformation, and loading workflows.",
+                tags: ["Python", "Faker", "Google Composer Platform", "Cloud Storage", "Cloud Composer", "Airflow", "Cloud Data Fusion"]
+            }
+        ]
+    }
 };
 export default en;

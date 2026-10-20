@@ -1,6 +1,5 @@
 import es from "./es";
 import en from "./en";
-import { transform } from "motion";
 
 export const translations = {
     es, en

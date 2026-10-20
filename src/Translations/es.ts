@@ -81,6 +81,40 @@ const es = {
                 tags: ["React", "Node.js", "JavaScript", "MySQL", "MongoDB", "Docker", "CI/CD"],
             },
         ],
+    },
+    projects: {
+        text: "PROYECTOS",
+        title: "MIS PROYECTOS",
+        label: "Una selección de proyectos donde combino creatividad, lógica y experiencia de usuario.",
+        projects: [
+            {
+                id: "midori",
+                name: "MIDORI",
+                label: "E-commerce platform",
+                github: "https://github.com/Inbi-Nav/Midori-Front",
+                descriptionLabel: "DESCRIPCIÓN DEL PROYECTO", 
+                description: "Midori es una plataforma E-commerce que incluye autenticación de usuarios, navegación por el catálogo de productos, pagos simulados y seguimiento de pedidos. Incorpora control de acceso basado en roles y un panel de administración para la gestión de pedidos, siguiendo la arquitectura MVC y los principios de diseño de bases de datos relacionales.",
+                tags: ["PHP", "Laravel", "MySQL", "Blade", "Tailwind CSS", "Livewire", "Docker", "Git"]
+            },
+            {
+                id: "mindcode",
+                name: "MINDCODE",
+                label: "Proyecto Académico grupal",
+                github: "https://github.com/inspedralbes/prj-final-front-back-G5-mindcode",
+                descriptionLabel: "DESCRIPCIÓN DEL PROYECTO", 
+                description: "Mindcode es una plataforma educativa full-stack que ofrece asistencia de programación mediante inteligencia artificial, proporcionando respuestas contextualizadas y cuestionarios automatizados basados en las interacciones previas de los estudiantes. Implementé API REST, gestión de usuarios y clases, y control de acceso basado en roles. Utilicé Docker para la contenerización y GitHub Actions para automatizar los procesos de CI/CD y los despliegues en producción.",
+                tags: ["React", "JavaScript", "Node.js", "MySQL", "MongoDB", "Docker", "Git"]
+
+            },
+            {
+                id: "etl",
+                name: "ETL project",
+                github: "https://github.com/Inbi-Nav/ETL-Project",
+                descriptionLabel: "DESCRIPCIÓN DEL PROYECTO", 
+                description: "Desarrollé un proceso ETL automatizado para generar datos sintéticos de empleados, subir archivos CSV al almacenamiento en la nube y orquestar flujos diarios de extracción, transformación y carga de datos",
+                tags: ["Python", "Faker", "Google Composer Platform", "Cloud Storage", "Cloud Composer", "Airflow", "Cloud Data Fusion"]
+            }
+        ]
     }
 }
 export default es;

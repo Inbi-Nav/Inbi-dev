@@ -67,7 +67,7 @@ function Navbar({
                 <a href="#experience" onClick={() => setIsMenuOpen(false)}>
                     {text.experience}
                 </a>
-                <a href="#projects" onClick={() => setIsMenuOpen(false)}>
+                <a href="#project" onClick={() => setIsMenuOpen(false)}>
                     {text.projects}
                 </a>
                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>
