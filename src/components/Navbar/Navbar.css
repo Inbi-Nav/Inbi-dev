@@ -41,13 +41,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 2.5vw, 2.5rem);
+    gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 .navbar-links a {
     text-decoration: none;
     font-family: var(--font-terminal);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     white-space: nowrap;
     padding: 0.4rem 0.9rem;
@@ -65,7 +65,7 @@
 .navbar-links a:hover {
     background-color: hsl(var(--lemon));
     border-color: hsl(var(--border));
-    color: hsl(270 20% 14%);          /* texto oscuro fijo: el fondo es amarillo en ambos temas */
+    color: hsl(270 20% 14%);          
     box-shadow: 3px 3px 0 hsl(var(--border-shadow-color));
     transform: translate(-2px, -2px);
 }
