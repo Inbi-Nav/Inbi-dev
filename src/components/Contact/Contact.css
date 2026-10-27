@@ -1,0 +1,312 @@
+
+.contact {
+    width: 90%;
+    max-width: 1200px;
+    margin: clamp(60px, 8vw, 100px) auto 0;
+    overflow: visible;
+}
+
+.contact-header {
+    margin: 0;
+    text-align: center;
+}
+
+.contact-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 2rem;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.title-first {
+    color: hsl(var(--foreground));
+    font-size: clamp(3rem, 9vw, 7rem);
+}
+
+.title-second {
+    color: hsl(var(--lemon));
+    font-size: clamp(3rem, 9vw, 7rem);
+    letter-spacing: 5px;
+    text-shadow:
+        -2px -2px 0 black,
+         0   -2px 0 black,
+         2px -2px 0 black,
+        -2px  0   0 black,
+         2px  0   0 black,
+        -2px  2px 0 black,
+         0    2px 0 black,
+         2px  2px 0 black;
+}
+
+.contact-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto 0;
+    max-width: 800px;
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.6rem);
+    line-height: 1.4;
+    text-align: center;
+    color: hsl(var(--foreground));
+}
+/* layout */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 2.5rem auto 3rem;
+    align-items: stretch;
+}
+/* email card */
+.contact-email-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+    min-height: 320px;
+    box-sizing: border-box;
+    padding: 2rem;
+    text-align: center;
+    background: hsl(var(--contact-card));
+    border: 3px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 0 hsl(var(--contact-shadow));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-email-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 hsl(var(--contact-shadow));
+}
+
+.email-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.6rem;
+    color: hsl(var(--ink));
+    background: hsl(var(--lila));
+    border: 3px solid hsl(var(--ink));
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 0 hsl(var(--contact-shadow));
+    transition: transform 0.3s steps(4);
+}
+
+.email-title {
+    margin: 0.3rem 0 0;
+    line-height: 1.1;
+    font-size: clamp(1.8rem, 2.5vw, 2.7rem);
+    letter-spacing: 2px;
+    color: hsl(var(--foreground));
+    font-family: var(--font-heading);
+
+}
+
+
+.email-label {
+    margin: 0;
+    max-width: 32ch;
+    font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
+    line-height: 1.4;
+    color: hsl(var(--foreground));
+}
+.email-buttton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.6rem;
+    color: hsl(var(--ink));
+    background: hsl(var(--lemon));
+    border: 3px solid hsl(var(--ink));
+    border-radius: 0.35rem;
+    box-shadow: 4px 4px 0 hsl(var(--contact-shadow));
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.9rem);
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.email-buttton:hover {
+    background: hsl(var(--lemon-accent));
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 hsl(var(--contact-shadow));
+}
+
+.email-buttton:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 hsl(var(--contact-shadow));
+}
+
+.email-button span {
+    transition: transform 0.2s ease;
+}
+
+.email-button:hover span {
+    transform: translateX(4px);
+}
+
+/* Terminal */
+.contact-terminal {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: hsl(var(--terminal-bg));
+    border: 3px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    box-shadow: 6px 6px 0 hsl(var(--contact-shadow));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-terminal:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 hsl(var(--contact-shadow));
+}
+.contact-terminal .terminal-header {
+    position: static;
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 1.2rem;
+    background: hsl(var(--lemon));
+    border-bottom: 3px solid hsl(var(--ink));
+    box-shadow: none;
+}
+
+.contact-terminal .terminal-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.contact-terminal .terminal-dots span {
+    width: 14px;
+    height: 14px;
+    border: 2px solid hsl(var(--ink));
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+.contact-terminal .dot-a { background: hsl(var(--pink)); }
+.contact-terminal .dot-b { background: hsl(var(--purple)); }
+.contact-terminal .dot-c { background: hsl(var(--green)); }
+
+.terminal-body {
+    flex: 1;
+    padding: 1.5rem 1.75rem;
+    color: hsl(var(--terminal-text));
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.6rem);
+    line-height: 1.4;
+}
+
+.terminal-line {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.terminal-prompt {
+    color: hsl(var(--pink));
+}
+
+.terminal-command {
+    color: hsl(var(--lemon));
+    letter-spacing: 1px;
+}
+
+.cmd-open{
+    color:aqua
+}
+.cmd-git {
+    color:deeppink;
+}
+.cmd-send {
+    color:darkorange;
+}
+
+.terminal-output {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0.2rem 0 1.5rem 1.4rem;
+}
+
+.terminal-arrow {
+    color: hsl(var(--purple));
+}
+
+.terminal-output a {
+    color: hsl(var(--terminal-text));
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.terminal-output a:hover {
+    color: hsl(var(--lemon));
+    border-bottom-color: hsl(var(--lemon));
+}
+
+
+@keyframes contact-blink {
+    50% { opacity: 0; }
+}
+
+.contact footer {
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.footer-line {
+    height: 3px;
+    margin-bottom: 1.2rem;
+    background: hsl(var(--border));
+}
+
+.contact footer p {
+    margin: 0;
+    font-size: clamp(0.9rem, 0.8rem + 0.3vw, 1.2rem);
+    letter-spacing: 1px;
+    color: hsl(var(--foreground));
+}
+
+@media (max-width: 800px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        margin: 2rem auto;
+    }
+    .contact-email-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        width: 92%;
+    }
+    .contact-email-card {
+        padding: 1.5rem 1rem;
+        box-shadow: 4px 4px 0 hsl(var(--contact-shadow));
+    }
+    .contact-terminal {
+        box-shadow: 4px 4px 0 hsl(var(--contact-shadow));
+    }
+    .terminal-body {
+        padding: 1.2rem 1rem;
+    }
+    .terminal-output {
+        margin-left: 0.8rem;
+    }
+}

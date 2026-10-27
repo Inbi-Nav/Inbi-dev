@@ -117,7 +117,7 @@ const en = {
     },
     contact: {
         title: "LET'S \n CONNECT",
-        lable: "I'm currently open to new professional opportunities. If you have a proposal, an interesting project, or simply want to connect. — Feel free to reach out.",
+        lable: "I'm currently open to new professional opportunities. If you have a proposal, an interesting project, or simply want to connect.\n— Feel free to reach out",
         emailTitle: "Send me an email",
         emailLabel: "Email is the easiest way to get in touch with me."
     }   

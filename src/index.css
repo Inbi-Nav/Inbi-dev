@@ -43,7 +43,12 @@
   --rosa-dark: 335 65% 74%;
   --verde-dark: 85 45% 66%;
   --azul-dark: 205 65% 68%;
-
+  --contact-card: 0 0% 100%;
+  --contact-shadow: var(--border-shadow-color);
+  --terminal-bg: 270 25% 12%;
+  --terminal-text: 270 30% 94%;
+  --ink: 270 20% 14%; 
+  
   --gradient-text:
     linear-gradient(
       115deg,
@@ -98,6 +103,9 @@
   --blue: 210 85% 62%;
   --surface-bg: 270 20% 10%;
   --mail: 2 65% 55%;
+  --contact-card: 270 18% 14%;
+  --contact-shadow: 265 40% 42%;     
+  --terminal-bg: 270 30% 6%;
 
   --gradient-text:
     linear-gradient(

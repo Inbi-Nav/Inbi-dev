@@ -117,9 +117,9 @@ const es = {
         ]
     },
     contact: {
-        title: "LET'S \n CONNECT",
-        lable: "Actualmente estoy abierta a nuevas oportunidades profesionales. Si tienes una propuesta, un proyecto interesante o simplemente quieres conectar — No dudes en contactarme.",
-        emailTitle: "Envíam un correo",
+        title: "LET'S\nCONNECT",
+        lable: "Actualmente estoy abierta a nuevas oportunidades profesionales. Si tienes una propuesta, un proyecto interesante o simplemente quieres conectar\n— No dudes en contactarme",
+        emailTitle: "Envíame un correo",
         emailLabel: "Correo es la forma mas sencilla de contactar conmigo."
     },
 }
