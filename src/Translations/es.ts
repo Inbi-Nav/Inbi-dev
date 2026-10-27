@@ -115,6 +115,12 @@ const es = {
                 tags: ["Python", "Faker", "Google Composer Platform", "Cloud Storage", "Cloud Composer", "Airflow", "Cloud Data Fusion"]
             }
         ]
-    }
+    },
+    contact: {
+        title: "LET'S \n CONNECT",
+        lable: "Actualmente estoy abierta a nuevas oportunidades profesionales. Si tienes una propuesta, un proyecto interesante o simplemente quieres conectar — No dudes en contactarme.",
+        emailTitle: "Envíam un correo",
+        emailLabel: "Correo es la forma mas sencilla de contactar conmigo."
+    },
 }
 export default es;

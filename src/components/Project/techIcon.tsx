@@ -17,6 +17,7 @@ import {
   SiCss,
 } from "react-icons/si";
 
+import { MdEmail } from "react-icons/md";
 
 import { FaCode, FaDatabase, FaRandom,  FaExternalLinkAlt } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -43,6 +44,7 @@ export const techIcons: Record<string, IconType> = {
   Airflow: SiApacheairflow,
   "Cloud Data Fusion": FaDatabase,
   ExternalLink: FaExternalLinkAlt,
+  Email: MdEmail,
 };
 
 

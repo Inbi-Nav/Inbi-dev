@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Skill from "./components/Skills/Skill";
 import Experience from "./components/Experience/Experience";
 import Project from "./components/Project/Project";
+import Contact from "./components/Contact/Contact"
 
 
 function App() {
@@ -40,19 +41,18 @@ function App() {
             />
             <About
                 language={language}
-                toggleLanguage={toggleLanguage}
             />
             <Skill
                 language={language}
-                toggleLanguage={toggleLanguage}
             />
             <Experience
                 language={language}
-                toggleLanguage={toggleLanguage}
             />
              <Project
                 language={language}
-                toggleLanguage={toggleLanguage}
+            />
+            <Contact
+            language={language}
             />
         </>
     );

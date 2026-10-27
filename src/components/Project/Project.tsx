@@ -1,15 +1,9 @@
 import { translations, type Language } from "../../Translations";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { techIcons, defaultTechIcon } from "./techIcon";
-
-
-
-// import projectImages from "./projectImages";
 import "./Project.css";
 import { useState } from "react";
 import { projectImages } from "./projectImages"
-
 
 type ProjectProps = {
     language: Language;
