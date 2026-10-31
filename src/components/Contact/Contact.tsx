@@ -46,7 +46,7 @@ function Contact({language}: ContactProps) {
                         <div className="terminal-output">
                             <span className="terminal-arrow">›</span>
 
-                            <a href="https://www.linkedin.com/in/inbisat-naveed/" target="blank" rel="noreferrer">linkedin.com/in/inbisat-naveed/</a>
+                            <a href="https://www.linkedin.com/in/inbisat-naveed/" target="_blank" rel="noreferrer">linkedin.com/in/inbisat-naveed/</a>
                         </div>
                         {/* github */}
                         <div className="terminal-line">

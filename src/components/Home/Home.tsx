@@ -19,7 +19,6 @@ function Home({ language }: HomeProps) {
     let timeout: number;
     if (!isTypingBack && displayPhrase.length < currentPhrase.length) {
         timeout = window.setTimeout(() => {
-            console.log("finishtyping, start deleting");
             setDisplayPhrase(
                 currentPhrase.slice(0, displayPhrase.length + 1)
             );
@@ -27,7 +26,6 @@ function Home({ language }: HomeProps) {
     }
     else if (!isTypingBack && displayPhrase === currentPhrase) {
         timeout = window.setTimeout(() => {
-            console.log("start deleting");
             setIsTypingBack(true);
         }, 1200);
     }
@@ -40,8 +38,6 @@ function Home({ language }: HomeProps) {
     }
     else {
         timeout = window.setTimeout(() => {
-            console.log("finished deleting, next phrase");
-
             setIsTypingBack(false);
             setPhraseIndex(
                 (currentIndex) =>
@@ -85,24 +81,24 @@ function Home({ language }: HomeProps) {
                 <p className="description">{text.description} </p>
             
                 <div className="resume">
-                    <a href="/Inbi-resume.pdf"  download="Inbisat-Resume.pdf" target="_blank" rel="noopner noreferrer"> VIEW RESUME </a>
+                    <a href={`${import.meta.env.BASE_URL}Inbi-resume.pdf`} download="Inbisat-Resume.pdf" target="_blank" rel="noopener noreferrer"> VIEW RESUME </a>
                 </div>
 
                 <div className="social-links">
                     <div className="mail-link">
-                        <a href="mailto:inbi.nav.02@gmail.com" target="_blank">
+                        <a href="mailto:inbi.nav.02@gmail.com" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-envelope"></i>
                         </a>
                     </div>
 
                     <div className="linkedin-link">
-                        <a href="https://www.linkedin.com/in/inbisat-naveed/"target="_blank">
+                        <a href="https://www.linkedin.com/in/inbisat-naveed/"target="_blank" rel="noopener noreferrer">
                             <i className="fa-brands fa-linkedin"></i>
                         </a>
                     </div>
                     
                     <div className="github-link">
-                        <a href="https://github.com/Inbi-Nav"target="_blank">
+                        <a href="https://github.com/Inbi-Nav"target="_blank" rel="noopener noreferrer">
                             <i className="fa-brands fa-github"></i>
                         </a>
                     </div>

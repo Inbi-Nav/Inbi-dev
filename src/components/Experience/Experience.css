@@ -152,20 +152,22 @@
 .exp-tag-3:hover { background: hsl(var(--azul-dark)); }
 
 @media (max-width: 800px) {
+    .exp-header {
+        padding: 0;
+        transform: scaleX(1.1);
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
     .exp-event {
         grid-template-columns: 1fr;      
         gap: 1rem;
         padding: 1.2rem;
     }
-
     .exp-date {
         justify-self: start;
     }
-
     .exp-content {
         padding-left: 1rem;
     }
-
 }
 
 @media (max-width: 480px) {

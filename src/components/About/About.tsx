@@ -36,7 +36,7 @@ function About({ language }: AboutProps) {
                             <p className='role-text'>Full-Stack Developer</p>
                         </div>
                         <div className='experience-box'>
-                            <span className="experience-number">1~</span>
+                            <span className="experience-number">1+</span>
                             <span className='experience-label'>YEAR EXPERIENCE </span>
                         </div>
                         <div className='coding-stat'>
@@ -58,22 +58,14 @@ function About({ language }: AboutProps) {
                     <h3>{text.education}</h3>
                 </div>
                 <div className='education-timeline'>
-                    <ul className='timeline-content'>
-                        <li className='event' data-date="2021-2023">
-                            <h3>{text.timeline[0].title}</h3>
-                            <p>{text.timeline[0].school}</p>
-                            <p> {text.timeline[0].tags.join(" · ")}</p>
-                        </li>
-                        <li className='event' data-date="2023-2025">
-                            <h3>{text.timeline[1].title}</h3>
-                            <p>{text.timeline[1].school}</p>
-                            <p>{text.timeline[1].tags.join(" · ")}</p>
-                        </li>
-                        <li className='event' data-date="2025-2026">
-                            <h3>{text.timeline[2].title}</h3>
-                            <p>{text.timeline[2].title}</p>
-                            <p>{text.timeline[2].tags.join(" · ")}</p>
-                        </li>
+                    <ul className="timeline-content">
+                        {text.timeline.map((item) => (
+                            <li className="event" key={item.date} data-date={item.date}>
+                                <h3>{item.title}</h3>
+                                <p>{item.school}</p>
+                                <p>{item.tags.join(" · ")}</p>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -97,7 +89,7 @@ function About({ language }: AboutProps) {
                                 <span className="language-level">{lang.level}</span>
                                 </div>
                                 <div className="language-squares" role="img" aria-label={`${lang.score}/5`}> {[1, 2, 3, 4, 5].map((n) => (
-                                <span key={n}className={`square ${n <= lang.score ? "filled" : ""}`}></span>))}
+                                <span key={n} className={`square ${n <= lang.score ? "filled" : ""}`}></span>))}
                             </div>
                         </li>
                     ))}

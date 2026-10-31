@@ -43,7 +43,7 @@ function Project({language}: ProjectProps) {
                                     )}
                                 </div>
                                     {project.github && (  
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="external-link"       aria-label={`Ver ${project.name} en GitHub`}>       <FaExternalLinkAlt aria-hidden="true" /></a> 
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="external-link" aria-label={`Ver ${project.name} en GitHub`}> <FaExternalLinkAlt aria-hidden="true" /></a> 
                                     )}
                             </div>
                         </div>
