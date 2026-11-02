@@ -1,7 +1,19 @@
+.contact {
+    --contact-card: 0 0% 100%;
+    --contact-shadow: var(--border-shadow-color);
+    --terminal-bg: 270 25% 12%;
+    --terminal-text: 270 30% 94%;
+    --ink: 270 20% 14%;
+}
+
+[data-theme="dark"] .contact {
+    --contact-card: 270 18% 14%;
+    --contact-shadow: 265 40% 42%;
+    --terminal-bg: 270 30% 6%;
+}
 
 .contact {
-    width: 90%;
-    max-width: 1200px;
+    width: min(100% - 2rem, 1200px);
     margin: clamp(60px, 8vw, 100px) auto 0;
     overflow: visible;
 }
@@ -32,27 +44,27 @@
     letter-spacing: 5px;
     text-shadow:
         -2px -2px 0 black,
-         0   -2px 0 black,
-         2px -2px 0 black,
-        -2px  0   0 black,
-         2px  0   0 black,
-        -2px  2px 0 black,
-         0    2px 0 black,
-         2px  2px 0 black;
+        0 -2px 0 black,
+        2px -2px 0 black,
+        -2px 0 0 black,
+        2px 0 0 black,
+        -2px 2px 0 black,
+        0 2px 0 black,
+        2px 2px 0 black;
 }
 
 .contact-label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem auto 0;
     max-width: 800px;
+    margin: 1rem auto 0;
     font-size: clamp(1.1rem, 1rem + 0.6vw, 1.6rem);
     line-height: 1.4;
     text-align: center;
     color: hsl(var(--foreground));
 }
-/* layout */
+
 .contact-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -61,7 +73,7 @@
     margin: 2.5rem auto 3rem;
     align-items: stretch;
 }
-/* email card */
+
 .contact-email-card {
     display: flex;
     flex-direction: column;
@@ -99,24 +111,27 @@
     transition: transform 0.3s steps(4);
 }
 
-.email-title {
-    margin: 0.3rem 0 0;
-    line-height: 1.1;
-    font-size: clamp(1.8rem, 2.5vw, 2.7rem);
-    letter-spacing: 2px;
-    color: hsl(var(--foreground));
-    font-family: var(--font-heading);
-
+.contact-email-card:hover .email-icon {
+    transform: translateY(-4px) rotate(-6deg);
 }
 
+.email-title {
+    margin: 0.3rem 0 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 2.5vw, 2.7rem);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: hsl(var(--foreground));
+}
 
 .email-label {
-    margin: 0;
     max-width: 32ch;
+    margin: 0;
     font-size: clamp(1.1rem, 1rem + 0.4vw, 1.4rem);
     line-height: 1.4;
     color: hsl(var(--foreground));
 }
+
 .email-buttton {
     display: inline-flex;
     align-items: center;
@@ -149,15 +164,14 @@
     box-shadow: 1px 1px 0 hsl(var(--contact-shadow));
 }
 
-.email-button span {
+.email-buttton span {
     transition: transform 0.2s ease;
 }
 
-.email-button:hover span {
+.email-buttton:hover span {
     transform: translateX(4px);
 }
 
-/* Terminal */
 .contact-terminal {
     display: flex;
     flex-direction: column;
@@ -174,6 +188,7 @@
     transform: translate(-3px, -3px);
     box-shadow: 9px 9px 0 hsl(var(--contact-shadow));
 }
+
 .contact-terminal .terminal-header {
     position: static;
     display: flex;
@@ -216,24 +231,16 @@
     gap: 0.8rem;
 }
 
-.terminal-prompt {
-    color: hsl(var(--pink));
-}
+.terminal-prompt { color: hsl(var(--pink)); }
 
 .terminal-command {
     color: hsl(var(--lemon));
     letter-spacing: 1px;
 }
 
-.cmd-open{
-    color:aqua
-}
-.cmd-git {
-    color:deeppink;
-}
-.cmd-send {
-    color:darkorange;
-}
+.cmd-open { color: aqua; }
+.cmd-git { color: deeppink; }
+.cmd-send { color: darkorange; }
 
 .terminal-output {
     display: flex;
@@ -241,9 +248,7 @@
     margin: 0.2rem 0 1.5rem 1.4rem;
 }
 
-.terminal-arrow {
-    color: hsl(var(--purple));
-}
+.terminal-arrow { color: hsl(var(--purple)); }
 
 .terminal-output a {
     color: hsl(var(--terminal-text));
@@ -256,11 +261,6 @@
 .terminal-output a:hover {
     color: hsl(var(--lemon));
     border-bottom-color: hsl(var(--lemon));
-}
-
-
-@keyframes contact-blink {
-    50% { opacity: 0; }
 }
 
 .contact footer {
@@ -283,19 +283,16 @@
 
 @media (max-width: 800px) {
     .contact-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 1.75rem;
         margin: 2rem auto;
     }
-    .contact-email-card {
-        min-height: 0;
-    }
+    .contact-email-card { min-height: 0; }
 }
 
 @media (max-width: 480px) {
-    .contact {
-        width: 92%;
-    }
+    .contact-title { gap: 0.25rem 1rem; }
+    .title-second { letter-spacing: 3px; }
     .contact-email-card {
         padding: 1.5rem 1rem;
         box-shadow: 4px 4px 0 hsl(var(--contact-shadow));
@@ -305,8 +302,13 @@
     }
     .terminal-body {
         padding: 1.2rem 1rem;
+        font-size: 1.15rem;
     }
-    .terminal-output {
-        margin-left: 0.8rem;
-    }
+    .terminal-output { margin-left: 0.8rem; }
+    .email-buttton { padding: 0.5rem 1.2rem; }
+}
+
+@media (hover: none) {
+    .contact-email-card:hover, .contact-terminal:hover, .email-buttton:hover { transform: none; }
+    .contact-email-card:hover .email-icon { transform: none; }
 }

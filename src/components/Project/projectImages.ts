@@ -1,6 +1,6 @@
-import midoriImg from "../../assets/Midori.png";
-import mindcodeImg from "../../assets/mindcode.png";
-import etlImg from "../../assets/etl.png";
+import midoriImg from "../../assets/Midori.webp";
+import mindcodeImg from "../../assets/mindcode.webp";
+import etlImg from "../../assets/ETL.webp";
 
 export const projectImages: Record<string, string> = {
   midori: midoriImg,

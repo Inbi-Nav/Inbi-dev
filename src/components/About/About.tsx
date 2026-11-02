@@ -29,7 +29,7 @@ function About({ language }: AboutProps) {
                         <i className="fa fa-user"></i>
                         <h3>{text.profile}</h3>
                     </div>
-                    <p className='description'>{text.description}</p>
+                    <p className='aboutme-description'>{text.description}</p>
                     <div className='stats-container'>
                         <div className='role-box'>
                             <i className='fa fa-code'></i>

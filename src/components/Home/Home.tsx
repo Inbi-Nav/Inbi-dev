@@ -78,7 +78,7 @@ function Home({ language }: HomeProps) {
                     <h4 className="role-title"> <span className="role-dot"></span>{text.profession}</h4>
                     <p className="role-phrases">&gt; {displayPhrase} </p>
                 </div>
-                <p className="description">{text.description} </p>
+                <p className="role-description">{text.description} </p>
             
                 <div className="resume">
                     <a href={`${import.meta.env.BASE_URL}Inbi-resume.pdf`} download="Inbisat-Resume.pdf" target="_blank" rel="noopener noreferrer"> VIEW RESUME </a>

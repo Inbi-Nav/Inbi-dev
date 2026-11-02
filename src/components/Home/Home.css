@@ -1,14 +1,6 @@
-body {
-    background: hsl(var(--background));
-    font-family: var(--font-terminal);
-    line-height: 1.6;
-}
-
 .home {
-    width: 65%;
-    min-height: 0;
+    width: min(100% - 2rem, max(65%, 780px));
     margin: 110px auto;
-    padding: 0 0 ;
     background: hsl(var(--background));
     border: 3px solid hsl(var(--border));
     box-shadow: 5px 5px 0 hsl(var(--border-shadow-color));
@@ -29,9 +21,6 @@ body {
     border-bottom: 3px solid hsl(var(--border-shadow-color));
     box-shadow: 0 5px 0 hsl(var(--border-shadow-color));
     z-index: 5;
-    transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease;
 }
 
 .terminal-title {
@@ -57,22 +46,13 @@ body {
     box-shadow: 1px 1px 0 hsl(var(--border-shadow-color));
 }
 
-.dot-a {
-    background: hsl(var(--pink));
-}
-
-.dot-b {
-    background: hsl(var(--purple));
-}
-
-.dot-c {
-    background: hsl(var(--green));
-}
+.dot-a { background: hsl(var(--pink)); }
+.dot-b { background: hsl(var(--purple)); }
+.dot-c { background: hsl(var(--green)); }
 
 .home-body {
     position: relative;
-    padding: 2rem 2.5rem 1.5rem;
-    padding-bottom: 0;
+    padding: 2rem 2.5rem 0;
     background: hsl(var(--background));
     overflow: hidden;
 }
@@ -80,10 +60,11 @@ body {
 .text {
     display: inline-flex;
     align-items: center;
-    margin: 0 0;
-    margin-left: 0.3rem;
+    margin: 0 0 0 0.3rem;
     padding: 0.4rem 0.7rem;
     width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
     color: hsl(var(--foreground));
     background: hsl(var(--background));
     border: 2px solid hsl(var(--border));
@@ -95,6 +76,7 @@ body {
     line-height: 1;
     white-space: nowrap;
 }
+
 .welcome-text {
     overflow: hidden;
     padding-left: 0.35rem;
@@ -105,15 +87,15 @@ body {
     display: inline-block;
     filter: grayscale(1) contrast(1.1) brightness(0);
     transform-origin: 70% 70%;
-    animation: wave 2s steps(6) infinite;   
+    animation: wave 2s steps(6) infinite;
 }
 
 @keyframes wave {
     0%, 60%, 100% { 
         transform: rotate(0deg); 
     }
-    10%, 30% {
-         transform: rotate(14deg);
+    10%, 30% { 
+        transform: rotate(14deg); 
     }
     20%, 40% { 
         transform: rotate(-8deg); 
@@ -128,17 +110,17 @@ body {
     flex-direction: column;
     align-items: flex-start;
     width: fit-content;
+    max-width: 100%;
     line-height: 0.8;
 }
 
 .intro-greet {
     display: block;
+    margin: 0 0 0 0.3rem;
     color: hsl(var(--foreground));
-    font-size: clamp(2.5rem, 4.5vw, 4rem);
-    margin-top: 0;
-    margin-left: 0.3rem;
-    font-weight: 500;
     font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 500;
     letter-spacing: 0.2rem;
 }
 
@@ -160,17 +142,13 @@ body {
 .role-card {
     width: 100%;
     box-sizing: border-box;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 0;
     padding: 0.6rem 1rem 0.8rem;
     color: hsl(var(--foreground));
     background: hsl(var(--background));
     border: 3px solid hsl(var(--border));
-    box-shadow:
-        6px 6px 0 hsl(var(--border-shadow-color));
+    box-shadow: 6px 6px 0 hsl(var(--border-shadow-color));
     font-size: clamp(1rem, 1.3vw, 1.3rem);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .role-title {
@@ -186,6 +164,7 @@ body {
 }
 
 .role-dot {
+    flex-shrink: 0;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -198,12 +177,10 @@ body {
     min-height: 1.6em;
     margin: 0.7rem 0 0;
     font-size: 1.7rem;
-    white-space: nowrap;
     color: hsl(var(--foreground));
     white-space: normal;
     overflow-wrap: anywhere;
 }
-
 
 .role-phrases::after {
     content: "";
@@ -217,25 +194,21 @@ body {
 }
 
 @keyframes cursor-blink {
-
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
-.description {
+.role-description {
     width: 100%;
     margin: 1rem 0 0;
     color: hsl(var(--foreground));
     font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
-    line-height: 1.3;
+    line-height: 1.35;
     letter-spacing: 0.03em;
 }
 
 .resume {
     display: inline-flex;
     align-items: center;
-    position: relative;
     margin: 1rem 0 0;
     padding: 0.35rem 0.8rem;
     font-size: 1.6rem;
@@ -243,6 +216,7 @@ body {
     border: 2px solid hsl(var(--border));
     border-radius: 0.35rem;
     box-shadow: 3px 3px 0 hsl(var(--border-shadow-color));
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .resume a {
@@ -252,17 +226,15 @@ body {
 
 .resume:hover {
     background: hsl(var(--lemon-accent));
-    display: inline-block;
     transform: translate(-5px, -5px);
-
 }
 
 .social-links {
-    display: flex; 
+    display: flex;
     align-items: center;
     gap: 2rem;
-    font-size: 2.4rem;
     margin-top: 1rem;
+    font-size: 2.4rem;
 }
 
 .social-links a:hover i {
@@ -270,60 +242,56 @@ body {
 }
 
 @keyframes hop {
-    0%, 100% {
-        transform: translateY(0); 
-    }
-    50% { 
-        transform: translateY(-8px); 
-    }
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
 }
 
-.mail-link a i {
-    color: hsl(var(--mail));
-}
-
-.github-link a i {
-    color: hsl(var(--foreground));
-}
-
-.linkedin-link a i {
-    color: hsl(var(--blue));
-}
-
-@media (max-width: 900px) {
-    .home {
-        width: 100%;
-    }
-}
+.mail-link a i { color: hsl(var(--mail)); }
+.github-link a i { color: hsl(var(--foreground)); }
+.linkedin-link a i { color: hsl(var(--blue)); }
 
 @media (max-width: 768px) {
-    .home {
-        width: 100%;
+    .home { margin: 90px auto 60px; }
+    .home-body { padding: 1.5rem 1.25rem 1.25rem; }
+    .text { 
+        margin-left: 0; 
+        font-size: 1.15rem; 
+        white-space: normal; 
     }
+    .welcome-text { white-space: normal; }
+
+    .intro-greet { 
+        margin-left: 0; 
+        font-size: clamp(2rem, 9vw, 3rem); 
+    }
+    .intro-name  { font-size: clamp(2rem, 9.5vw, 3.4rem); }
     .role-card {
-        width: 100%;
-        box-sizing: border-box;
+        padding: 0.6rem 0.8rem 0.8rem;
+        box-shadow: 4px 4px 0 hsl(var(--border-shadow-color));
     }
-    .role-phrases {
-        white-space: normal;
-        overflow-wrap: anywhere;
-        max-width: 100%;
-        box-sizing: border-box;
+    .role-title { 
+        display: block; 
+        font-size: 1.35rem; 
+        line-height: 1.25; 
     }
-    .terminal-title {
-        font-size: 1.2rem;
+    .role-dot { 
+        display: inline-block; 
+        margin-right: 0.6rem; 
+        vertical-align: -0.1em; 
     }
-    .role-title {
-        font-size: 1.4rem;
+    .role-phrases { 
+        min-height: 4.2em; 
+        font-size: 1.3rem; 
+        line-height: 1.4; 
     }
+    .resume { font-size: 1.4rem; }
+    .social-links { 
+        gap: 1.5rem; 
+        font-size: 2rem; 
+    }
+    .terminal-title { font-size: 1.2rem; }
 }
 
-@media (max-width: 480px) {
-    .home {
-        width: 94%;
-    }
-
-     .terminal-title {
-        font-size: 1.2rem;
-    }   
+@media (hover: none) {
+    .resume:hover { transform: none; }
 }
