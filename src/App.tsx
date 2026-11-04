@@ -7,12 +7,14 @@ import Skill from "./components/Skills/Skill";
 import Experience from "./components/Experience/Experience";
 import Project from "./components/Project/Project";
 import Contact from "./components/Contact/Contact"
+import { useScrollAnimation } from "./hooks/useScrollAnimation";
 
 
 function App() {
 
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [language, setLanguage] = useState<Language>("es");
+    useScrollAnimation(true);
     const toggleDarkMode = () => {
         setIsDarkMode((previousMode) => !previousMode);
     };
@@ -27,7 +29,7 @@ function App() {
         document.documentElement.setAttribute(
             "data-theme", isDarkMode ? "dark" : "light");
     }, [isDarkMode]);
-
+    
     return (
         <>
             <Navbar

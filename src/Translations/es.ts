@@ -1,4 +1,13 @@
 const es = {
+    navbar: {
+        home: "INICIO",
+        about: "SOBRE MI",
+        skills: "SKILLS",
+        experience: "EXPERIENCIA",
+        projects: "PROYECTOS",
+        contact: "CONTACTO"
+    },
+    
     home: {
         greet: "BIENVENIDO/A, USER",
         intro: "Hola, soy",

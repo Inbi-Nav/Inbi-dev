@@ -1,12 +1,9 @@
 import { useState } from "react";
 import "./Navbar.css";
-
 import webLogo from "../../assets/web_logo.png";
-
 import darkModeSign from "../../assets/light_mode_sign.png";
 import lightModeSign from "../../assets/dark_mode_sign.png";
-
-type Language = "en" | "es";
+import { translations, type Language } from "../../Translations";
 
 type NavbarProps = {
     isDarkMode: boolean;
@@ -15,38 +12,18 @@ type NavbarProps = {
     toggleLanguage: () => void;
 };
 
-const translations = {
-    es: {
-        home: "INICIO",
-        about: "SOBRE MI",
-        skills: "SKILLS",
-        experience: "EXPERIENCIA",
-        projects: "PROYECTOS",
-        contact: "CONTACTO"
-    },
-
-    en: {
-        home: "HOME",
-        about: "ABOUT ME",
-        skills: "SKILLS",
-        experience: "EXPERIENCE",
-        projects: "PROJECTS",
-        contact: "CONTACT"
-    },
-};
-
 function Navbar({
     isDarkMode,
     toggleDarkMode,
     language,
-    toggleLanguage
+    toggleLanguage,
 }: NavbarProps) {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen((previousState) => !previousState);
     };
-    const text = translations[language];
+    const text = translations[language].navbar;
 
     return (
         <nav className="navbar">
@@ -54,8 +31,8 @@ function Navbar({
                 <img src={webLogo} alt="Web Logo"/>
             </div>
 
-            <div id="navbar-menu" className={`navbar-links ${isMenuOpen ? "open" : ""}`} >
-                <a href="#home" onClick={() => setIsMenuOpen(false)} >
+            <div id="navbar-menu" className={`navbar-links ${isMenuOpen ? "open" : ""}`}>
+                <a href="#home" onClick={() => setIsMenuOpen(false)}>
                     {text.home}
                 </a>
                 <a href="#about-me" onClick={() => setIsMenuOpen(false)}>
@@ -76,35 +53,41 @@ function Navbar({
             </div>
 
             <div className="navbar-actions">
-
                 <div className="darkMode-toggle">
-                    <button onClick={toggleDarkMode} aria-label={ isDarkMode ? "Switch to light mode" : "Switch to dark mode"}>
-                        <img src={isDarkMode ? darkModeSign : lightModeSign } alt=""/>
+                    <button
+                        onClick={toggleDarkMode}
+                        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+                    >
+                        <img src={isDarkMode ? darkModeSign : lightModeSign} alt="" />
                     </button>
                 </div>
 
                 <div className="language-toggle">
-                    <button className={`language-switch ${language}`} onClick={toggleLanguage} aria-label={ language === "es" ? "Change language to English" : "Cambiar idioma a español"}>
-                        <span className="language-option language-en">
-                            EN
-                        </span>
-                        <span className="language-option language-es">
-                            ES
-                        </span>
+                    <button
+                        className={`language-switch ${language}`}
+                        onClick={toggleLanguage}
+                        aria-label={language === "es" ? "Change language to English" : "Cambiar idioma a español"}
+                    >
+                        <span className="language-option language-en">EN</span>
+                        <span className="language-option language-es">ES</span>
                         <span className="language-circle">
                             {language === "es" ? "ES" : "EN"}
                         </span>
                     </button>
                 </div>
 
-                <button className={`menu-toggle ${isMenuOpen ? "open" : ""}`} onClick={toggleMenu} aria-expanded={isMenuOpen} aria-controls="navbar-menu" aria-label={ isMenuOpen ? "Close navigation menu": "Open navigation menu"} >
+                <button
+                    className={`menu-toggle ${isMenuOpen ? "open" : ""}`}
+                    onClick={toggleMenu}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="navbar-menu"
+                    aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                >
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-
             </div>
-
         </nav>
     );
 }
