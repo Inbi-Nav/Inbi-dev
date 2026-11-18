@@ -97,6 +97,16 @@ const es = {
         label: "Una selección de proyectos donde combino creatividad, lógica y experiencia de usuario.",
         projects: [
             {
+                id: "breathe",
+                name: "Breathe with me",
+                descriptionLabel: "DESCRIPCIÓN DEL PROYECTO",
+                label: "Aplicación de bienestar",
+                github: "https://github.com/Inbi-Nav/breathe-with-me",
+                description: "Desarrollé una aplicación de escritorio de bienestar centrada en la respiración, que utiliza el SDK SmartSpectra de Presage para seguir la respiración y el ritmo cardíaco a través de la webcam. Muestra la respiración en directo y ofrece un resumen sencillo después de cada sesión. Un compañero con IA integrado explica los resultados y los convierte en consejos diarios fáciles de seguir.",
+                tags: ["React", "JavaScript", "Electron", "Vite", "SmartSpectra SDK", "Ollama", "ElevenLabs"]
+            },
+
+            {
                 id: "midori",
                 name: "MIDORI",
                 label: "E-commerce platform",

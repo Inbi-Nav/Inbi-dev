@@ -15,6 +15,8 @@ import {
   SiGooglecloud,
   SiApacheairflow,
   SiCss,
+  SiElectron, 
+  SiVite 
 } from "react-icons/si";
 
 import { MdEmail } from "react-icons/md";
@@ -45,7 +47,11 @@ export const techIcons: Record<string, IconType> = {
   "Cloud Data Fusion": FaDatabase,
   ExternalLink: FaExternalLinkAlt,
   Email: MdEmail,
+  Electron: SiElectron,
+  Vite: SiVite,
+  "SmartSpectra SDK": FaCode,
+  Ollama: FaCode,
+  ElevenLabs: FaCode,
 };
-
 
 export const defaultTechIcon = FaCode;

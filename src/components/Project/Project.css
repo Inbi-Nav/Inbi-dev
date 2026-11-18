@@ -127,7 +127,7 @@
 
 .project-name {
     margin: 0;
-    font-size: clamp(1.5rem, 1.2vw, 2.6rem);
+    font-size: clamp(1rem, 1.2vw, 2.6rem);
     line-height: 1;
     transform: scaleX(2);
     transform-origin: left;
